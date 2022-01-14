@@ -1,0 +1,47 @@
+
+# *TOP-LEVEL KEY:VALUE CONFIGS
+
+# define docker-compose file version
+version: "2"
+
+# define any persistant volumes that needs to be used
+volumes:
+  drupal-modules:
+  drupal-profiles:
+  drupal-sites:
+  drupal-themes:
+  postgres_data:
+
+# define any custom networks that needs to be used
+
+# define services (containers) and their attrbs 
+services:
+# **SERVICE-LEVEL KEY:VALUE CONFIGS
+
+  # enter the service name of the container
+  drupal:
+    image: drupal
+
+
+    # map persistant volumes to directory(ies) in the container
+    volumes:
+      - drupal-modules:/var/www/html/modules
+      - drupal-sites:/var/www/html/sites
+      - drupal-themes:/var/www/html/themes
+      - drupal-profiles:/var/www/html/profiles
+
+    # enter any port bindings 
+    ports:
+      - "8080:80"
+  postgres:
+    image: postgres
+
+    # enter any enviroment variables for that service
+    environment:
+      - POSTGRES_PASSWORD=cisco12345
+
+    # map persistant volumes to directory(ies) in the container
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    

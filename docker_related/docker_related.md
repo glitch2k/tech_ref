@@ -29,7 +29,7 @@
        - ### re-start from step (5)
   6. ## test the functionality of the app when deployed with the dockerfile
      - ## if the test is SAT:
-       - ### enter the python app in the *"deployment pipe"*
+       - ### enter the python app in the *"deployment pipeline"*
      - ## if the test is UNSAT:
        - ### troubleshoot *"deploying python app with dockerfile"*
        - ### re-start from step (6)
@@ -49,3 +49,25 @@
         docker build -t [new_image_name] .
         docker build -t dns_ver_api_img .
         ```
+
+---
+---
+
+# How to tag a custom local image & push it to your remote repo on dockerhub
+
+- ## how to tag a docker image to push to your remote repo in docker hub:
+    -   ```
+          docker tag local-image:tagname new-repo:tagname
+
+          docker tag zero_fox_layer:1.2 glitch2k/zero_fox_layer:1.02
+        ```
+- ## how to push a custom docker image to your remote repo in docker hub:  
+    -   ```  
+          docker push username/remote_repo_name:tagname
+
+          docker push glitch2k/zero_fox_layer:1.02
+
+        ```
+
+---
+---

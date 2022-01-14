@@ -1,0 +1,29 @@
+version: '2'
+
+volumes:
+  # prometheus-data:
+  #   driver: local
+  # grafana-data:
+  #   driver: local
+
+services:
+  nginx_reverse_proxy:
+    image: nginx
+    # container_name: prometheus
+    ports:
+      - "5000:5000"
+    # volumes:
+    #   - /home/glitch/Documents/Dev-Ops/boiler_plates/boilerplates-main/docker-compose/prometheus/config/:/config
+    #   - prometheus-data:/prometheus
+
+    # restart: unless-stopped
+    # command:
+    #   - "--config.file=/config/prometheus.yml"
+    depends_on:
+      - zero_fox_layer
+      
+  zero_fox_layer:
+    image: zero_fox_layer_flask_napalm:0.17
+    
+    volumes:
+      - 
