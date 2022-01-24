@@ -1,0 +1,40 @@
+# *TOP-LEVEL KEY:VALUE CONFIGS
+
+# define docker-compose file version
+version: "2"
+
+# define any persistent volumes that need to be used
+volumes:
+  # - volume_name:
+  alpine_volume: 
+
+# define any custom networks that need to be used
+# networks:
+#   # - network_name:
+#   my_network:
+
+
+# define services (containers) and their attrbs 
+services:
+# **SERVICE-LEVEL KEY:VALUE CONFIGS
+
+  # enter the service name of the container
+  # my_drupal_service_name:
+  my_alpine:
+    # image: drupal:[tag_name]
+    image: alpine
+
+    # map persistant volumes to directory(ies) in the container
+    volumes:
+      # - drupal-modules:/var/www/html/modules
+      - alpine_volume:/tmp
+      
+    # enter any port bindings 
+    ports:
+      - 8080:80
+      
+    # enter any enviroment variables for that service
+    # environment:
+      # - VAR_NAME=var_value
+      
+    

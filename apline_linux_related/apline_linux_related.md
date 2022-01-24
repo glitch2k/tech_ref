@@ -1,4 +1,4 @@
 # UPDATE & UPGRADE ALPINE
-- ## run rhe command:
+- ## run the command:
   - ``` apk -U upgrade ```
   
