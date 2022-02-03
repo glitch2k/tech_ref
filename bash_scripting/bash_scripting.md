@@ -1,15 +1,38 @@
 * ## how to print a text to screen
-  * ``` echo 'hello_world' ```
+  * syntax
+    * ``` echo 'hello_world' ```
+  * returned value
+    * hello_world
 * ## assign a value to a variable
-  * ``` var1='hello_world' ```
+  * syntax
+    * ``` var1='hello_world' ```
 * ## print a variable value to screen
-  * ``` echo "$var1" ```
-  * ``` echo "${var1}" ```
+  * syntax
+    * ``` echo "$var1" ```
+    * ``` echo "${var1}" ```
+  * returned value
+    * hello_world
 * ## print a combination of text & the variable value to screen
-  * ``` echo "this will display $var1" ```
-  * ``` echo "this will display ${var1}" ```
-* ## apping text to a variable
-  * ``` echo "${var1}ing is fun" ```
+  * syntax
+    * ```
+        var1='hello_world' 
+        echo "this will display $var1" 
+      ```
+      or
+    * ``` 
+        var1='hello_world'
+        echo "this will display ${var1}" 
+      ```
+  - both will return:
+    - this will display hello_world
+* ## combining text to a variable value
+  * syntax
+    * ``` 
+        var1='script'
+        echo "${var1}ing is fun" 
+      ```
+  - this will return:
+    - scripting is fun
 * ## NOTE about using ('')
   * the shells sees everything inside the '' as is
   * so if you have:
@@ -23,23 +46,26 @@
 ---
 
 * ## display *UID* of current user
-  * ``` echo "current user id is ${UID}" ```
-  * the variable [UID] is a special variable maintianed by the shell
-    * to get more info on this variable and other special variables
-      * ``` man bash ```
+  * syntax
+    * ``` echo "current user id is ${UID}" ```
+    * the variable [UID] is a special variable maintianed by the shell
+      * to get more info on this variable and other special variables
+        * ``` man bash ```
 * ## save the result of a command to a variable
-  * ``` USER_NAME=$(id -un) ```
-  * this will save the result of the command ***id -un*** to the variable ***USER_NAME***
-    * the above command will display the current user logged in
+  * syntax
+    * ``` USER_NAME=$(id -un) ```
+      * this will save the result of the command ***id -un*** to the variable ***USER_NAME***
+      * the above command will display the current user logged in
 * ## use ***if*** statment to verify that the user is root
-  * ``` 
-        if [[ "${UID}" -eq 0 ]]
-        then
-          echo 'you are root.'
-        else
-          echo 'you are NOT root.'
-        fi 
-    ```
+  * syntax
+    * ``` 
+          if [[ "${UID}" -eq 0 ]]
+          then
+            echo 'you are root.'
+          else
+            echo 'you are NOT root.'
+          fi 
+      ```
 * ## compare the values of 2 variables in ***if*** statment
   * ```
         UID_TO_COMPARE='0'       
