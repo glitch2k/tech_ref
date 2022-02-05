@@ -1,0 +1,31 @@
+# Basic Ruby on Rails Operations
+- Variable & String Operations
+	- Assing variables
+	- Print values from variables
+	- Print strings
+	- Differet print formatting
+- List/Array Operations
+	- Create a list
+	- Append to a list
+	- Delete item(s) from a list
+	- Loop thru a list
+- Key:Value (k:v) Pairs
+	- Create a k:v
+	- Append attrbs to a k:v
+	- Delete attrb(s) from a k:v
+	- Loop thru a k:v
+	- Print all keys from a k:v
+	- Print all values from a k:v
+	- Print a specific key's value from a k:v
+	- Print all keys & values from a k:v
+- Conditional Operation
+	- if/then statements
+	- for loops
+	- while loops
+- Object Oriented Operations
+	- Create a class
+	- Create an object from that class
+	- Printing attrb(s) from that object
+	- Create methods
+	- Using methods from an object
+	- Class inheritance
